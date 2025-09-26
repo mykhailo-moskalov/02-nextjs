@@ -24,15 +24,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+const date = new Date().getFullYear()
+
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <TanStackProvider>
           <Header />
           <main>{children}</main>
-          <footer>
+          <footer style={{
+            backgroundColor: 'grey'
+          }}>
             <p>
-              Created <time dateTime="2025">2025</time>
+              Created <time dateTime={date.toLocaleString()}>{date}</time>
             </p>
           </footer>
         </TanStackProvider>
