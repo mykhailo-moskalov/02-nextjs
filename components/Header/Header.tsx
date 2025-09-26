@@ -5,11 +5,7 @@ import CategoriesMenu from "../CategoriesMenu/CategoriesMenu";
 
 const Header = async () => {
   const categories = await getCategories();
-
-  const handleClick = () => {
-    // ...
-  };
-
+  
   return (
     <header className={css.header}>
       <Link href="/" aria-label="Home">
