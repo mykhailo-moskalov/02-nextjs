@@ -21,20 +21,27 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
-const date = new Date().getFullYear()
+  const date = new Date().getFullYear();
 
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <TanStackProvider>
           <Header />
-          <main>{children}</main>
-          <footer style={{
-            backgroundColor: 'grey'
-          }}>
+          <main>
+            {children}
+            {modal}
+          </main>
+          <footer
+            style={{
+              backgroundColor: "grey",
+            }}
+          >
             <p>
               Created <time dateTime={date.toLocaleString()}>{date}</time>
             </p>
